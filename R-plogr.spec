@@ -4,7 +4,7 @@
 #
 Name     : R-plogr
 Version  : 0.2.0
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/plogr_0.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plogr_0.2.0.tar.gz
 Summary  : The 'plog' C++ Logging Library
