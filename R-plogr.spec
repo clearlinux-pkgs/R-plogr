@@ -4,16 +4,17 @@
 #
 Name     : R-plogr
 Version  : 0.2.0
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/plogr_0.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/plogr_0.2.0.tar.gz
-Summary  : The 'plog' C++ Logging Library
+Summary  : A simple header-only logging library for C++.
 Group    : Development/Tools
 License  : MIT
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-A simple header-only logging library for C++.
+plogr [![Travis-CI Build Status](https://travis-ci.org/krlmlr/plogr.svg?branch=master)](https://travis-ci.org/krlmlr/plogr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/plogr?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/plogr)
+============================================================================================================================================================================================================================================================================================
 
 %prep
 %setup -q -c -n plogr
@@ -23,11 +24,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522162771
+export SOURCE_DATE_EPOCH=1552780711
 
 %install
+export SOURCE_DATE_EPOCH=1552780711
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1522162771
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,8 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library plogr|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  plogr || :
 
 
 %files
